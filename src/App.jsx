@@ -24,6 +24,7 @@ export default function App() {
     const names = contacts.some(contacts => contacts.name === values.name);
     if (names) {
       toast(`${values.name} is already in contacts`);
+      return;
     } else {
       const newContact = {
         id: nanoid(3),
@@ -60,7 +61,6 @@ export default function App() {
       >
         <Section title="Phonebook">
           <ContactForm onSubmit={handleSubmit} />
-          <ToastContainer />
         </Section>
 
         <Section title="Contacts">
@@ -71,6 +71,7 @@ export default function App() {
           />
         </Section>
       </Box>
+      <ToastContainer autoClose={3000} />
     </>
   );
 }
