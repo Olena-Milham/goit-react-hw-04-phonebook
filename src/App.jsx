@@ -38,17 +38,18 @@ export default function App() {
   const changeFilter = event => {
     setFilter(event.target.value);
   };
+
+  const deleteContact = contactId => {
+    setContacts(prevState => {
+      return prevState.filter(contact => contact.id !== contactId);
+    });
+  };
+
   const filteredContacts = useMemo(() => {
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   }, [filter, contacts]);
-
-  const deleteContact = contactId => {
-    setContacts(prevState => {
-      prevState.filter(contact => contact.id !== contactId);
-    });
-  };
 
   return (
     <>
