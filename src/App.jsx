@@ -32,7 +32,7 @@ export default function App() {
         name: values.name,
         number: values.number,
       };
-      setContacts(prevState => [newContact, ...contacts]);
+      setContacts([newContact, ...contacts]);
     }
   };
 
