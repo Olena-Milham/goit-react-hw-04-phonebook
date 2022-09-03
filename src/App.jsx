@@ -6,6 +6,7 @@ import { ContactForm } from 'components/ContactForm/Form';
 import { Box } from 'components/ui/Box';
 import { Section } from 'components/ui/Section';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState, useMemo } from 'react';
 import useLocalStorage from 'hooks/useLocalStorage';
 
